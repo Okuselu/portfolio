@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Logo } from '@/components/ui/logo'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Linkedin, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/#about' },
-    { name: 'Projects', href: '/projects' },
+    { name: 'Projects', href: '/#projects' },
     { name: 'Contact', href: 'mailto:topeokuselu@gmail.com' },
 ]
 
@@ -85,16 +85,18 @@ export default function Header() {
                                     variant="outline"
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="/contact">
-                                        <span>Contact</span>
+                                    <Link href="https://www.linkedin.com/in/temitope-okuselu-76445a155/" target="_blank" rel="noopener noreferrer">
+                                        <Linkedin className="mr-2 h-4 w-4" />
+                                        <span>LinkedIn</span>
                                     </Link>
                                 </Button>
                                 <Button
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="/projects">
-                                        <span>View Work</span>
+                                    <Link href="https://github.com/Okuselu" target="_blank" rel="noopener noreferrer">
+                                        <Github className="mr-2 h-4 w-4" />
+                                        <span>GitHub</span>
                                     </Link>
                                 </Button>
                             </div>

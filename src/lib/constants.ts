@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: "Tope Okuselu",
-  description: "Frontend Developer specializing in React, Next.js, and modern web technologies. Building exceptional user experiences at Troott and Pacepard.",
+  description: "Engineering Lead creating tech solutions by positioning myself to learn, grow, and serve. Specializing in React, Next.js, and modern web technologies.",
   url: "https://topeokuselu.dev",
   author: {
     name: "Tope Okuselu",
@@ -8,10 +8,10 @@ export const SITE_CONFIG = {
     firstName: "Temitope",
     lastName: "Okuselu",
     email: "topeokuselu@gmail.com",
-    tagline: "Frontend Developer & Digital Innovator",
-    bio: "Frontend Developer at Troott and Pacepard, passionate about creating exceptional user experiences and scalable web solutions.",
+    tagline: "Creating Tech Solutions Through Learning, Growing & Serving",
+    bio: "Engineering Lead at Pacepard and Frontend Developer at Troott. I create tech solutions by positioning myself to learn, grow, and serve, building exceptional user experiences and scalable web solutions.",
     github: "https://github.com/topeokuselu",
-    linkedin: "https://linkedin.com/in/topeokuselu"
+    linkedin: "https://www.linkedin.com/in/temitope-okuselu-76445a155/"
   }
 }
 
@@ -24,31 +24,13 @@ export const CURRENT_ROLES = [
   },
   {
     company: "Pacepard",
-    position: "Frontend Developer", 
-    description: "Developing developer engagement platform with cutting-edge UI/UX",
+    position: "Engineering Lead", 
+    description: "Leading development of developer engagement platform with cutting-edge UI/UX and team collaboration",
     url: "https://pacepard.com"
   }
 ]
 
 export const FEATURED_PROJECTS = [
-  {
-    id: "biscenic",
-    name: "Biscenic",
-    title: "Biscenic",
-    type: "E-commerce",
-    description: "A comprehensive e-commerce platform featuring modern design, seamless user experience, and robust functionality for online retail.",
-    url: "https://biscenic.com",
-    github: "https://github.com/topeokuselu/biscenic",
-    status: "Live",
-    role: "Full-Stack Developer",
-    highlights: [
-      "Modern e-commerce platform with intuitive user interface",
-      "Secure payment processing and order management",
-      "Responsive design optimized for all devices",
-      "Advanced product catalog and search functionality"
-    ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Node.js"]
-  },
   {
     id: "troott",
     name: "Troott",
@@ -59,6 +41,7 @@ export const FEATURED_PROJECTS = [
     github: null,
     status: "Live",
     role: "Frontend Developer",
+    logo: "/troott-icon-dark.svg",
     highlights: [
       "Real-time sermon streaming with high-quality video",
       "User-friendly interface for easy content discovery",
@@ -76,7 +59,8 @@ export const FEATURED_PROJECTS = [
     url: "https://pacepard.com",
     github: null,
     status: "In Development",
-    role: "Frontend Developer",
+    role: "Engineering Lead",
+    logo: "/images/Pacepard.png",
     highlights: [
       "Advanced developer analytics and insights",
       "Team collaboration and project management tools",
@@ -84,6 +68,25 @@ export const FEATURED_PROJECTS = [
       "Real-time performance monitoring and reporting"
     ],
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "GraphQL", "PostgreSQL"]
+  },
+  {
+    id: "biscenic",
+    name: "Biscenic",
+    title: "Biscenic",
+    type: "E-commerce",
+    description: "A comprehensive e-commerce platform featuring modern design, seamless user experience, and robust functionality for online retail.",
+    url: "https://biscenic.com",
+    github: "https://github.com/topeokuselu/biscenic",
+    status: "Live",
+    role: "Full-Stack Developer",
+    logo: null,
+    highlights: [
+      "Modern e-commerce platform with intuitive user interface",
+      "Secure payment processing and order management",
+      "Responsive design optimized for all devices",
+      "Advanced product catalog and search functionality"
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Node.js"]
   }
 ]
 
@@ -103,12 +106,11 @@ export const SOCIAL_LINKS = [
   },
   {
     name: "LinkedIn", 
-    url: "https://linkedin.com/in/topeokuselu",
+    url: "https://www.linkedin.com/in/temitope-okuselu-76445a155/",
     icon: "linkedin",
     description: "Connect with me professionally and view my career journey"
   }
 ]
-
 export const SKILLS = {
   frontend: [
     "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", 
@@ -120,10 +122,6 @@ export const SKILLS = {
   ],
   tools: [
     "Git", "Docker", "AWS", "Vercel", "Figma", 
-    "VS Code", "Webpack", "Vite", "ESLint", "Prettier"
-  ],
-  specialties: [
-    "MongoDB", "PostgreSQL", "Firebase", "Stripe Integration",
-    "WebRTC", "Real-time Applications", "E-commerce Solutions"
+    "VS Code", "Webpack", "Vite", "ESLint", "Prettier", "POSTMAN"
   ]
 }

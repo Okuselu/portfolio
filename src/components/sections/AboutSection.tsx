@@ -52,18 +52,12 @@ const skillCategories = [
     icon: <Globe className="h-6 w-6" />,
     skills: SKILLS.tools,
     description: 'Leveraging modern development tools and cloud platforms'
-  },
-  {
-    title: 'Specializations',
-    icon: <Award className="h-6 w-6" />,
-    skills: SKILLS.specialties,
-    description: 'Areas of expertise and focused development'
   }
 ]
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-muted/30">
+    <section id="about" className="pt-12 lg:pt-16 pb-24 lg:pb-32 bg-muted/30">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -95,7 +89,7 @@ export default function AboutSection() {
                   {SITE_CONFIG.author.tagline}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  I'm a Frontend Developer with a passion for creating innovative web applications 
+                  I&apos;m a Fullstack Developer with a passion for creating innovative web applications 
                   that solve real-world problems. Currently working at two exciting startups, 
                   I specialize in building scalable, user-centric solutions using modern technologies.
                 </p>
@@ -137,7 +131,7 @@ export default function AboutSection() {
               <div>
                 <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                   <Users className="h-5 w-5 text-primary" />
-                  Let's Connect
+                  Let&apos;s Connect
                 </h4>
                 <SocialLinks variant="default" size="default" />
               </div>
@@ -150,7 +144,7 @@ export default function AboutSection() {
               <h3 className="text-2xl font-bold text-foreground">Skills & Expertise</h3>
               
               <div className="grid grid-cols-1 gap-6">
-                {skillCategories.map((category, index) => (
+                {skillCategories.map((category) => (
                   <div
                     key={category.title}
                     className="p-6 rounded-lg border border-border bg-card hover:shadow-md transition-shadow duration-300"
@@ -177,22 +171,6 @@ export default function AboutSection() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Call to Action */}
-              <div className="p-6 rounded-lg border border-border bg-gradient-to-br from-primary/5 to-transparent">
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  Ready to Collaborate?
-                </h4>
-                <p className="text-muted-foreground mb-4">
-                  I'm always interested in discussing new opportunities and innovative projects.
-                </p>
-                <Button asChild size="lg">
-                  <Link href="mailto:topeokuselu@gmail.com">
-                    Get In Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
             </div>
           </AnimatedGroup>

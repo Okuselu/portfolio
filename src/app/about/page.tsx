@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Background</h2>
           <p className="text-gray-600 mb-6">
-            I'm a passionate developer with experience in modern web technologies. 
+            I&apos;m a passionate developer with experience in modern web technologies. 
             I love creating beautiful, functional, and user-friendly applications.
           </p>
           

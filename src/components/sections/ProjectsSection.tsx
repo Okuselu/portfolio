@@ -2,11 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ExternalLink, Github, Globe, Zap, Users, Code, Smartphone } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github, Globe, Zap, Users, Code, Smartphone, Linkedin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/motion-primitives/text-effect'
 import { AnimatedGroup } from '@/components/motion-primitives/animated-group'
 import { FEATURED_PROJECTS } from '@/lib/constants'
+import Image from 'next/image'
 
 const fadeInBlurVariants = {
   container: {
@@ -71,7 +72,7 @@ const getStatusBadge = (status: string) => {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 lg:py-32">
+    <section id="projects" className="pt-24 lg:pt-32 pb-12 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
           <TextEffect
@@ -110,7 +111,17 @@ export default function ProjectsSection() {
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    {getProjectIcon(project.type)}
+                    {project.logo ? (
+                      <Image
+                        src={project.logo}
+                        alt={`${project.name} logo`}
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                      />
+                    ) : (
+                      getProjectIcon(project.type)
+                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -183,37 +194,6 @@ export default function ProjectsSection() {
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
-        </AnimatedGroup>
-
-        {/* Call to Action */}
-        <AnimatedGroup
-          variants={fadeInBlurVariants}
-          delay={1}
-          className="mt-16 text-center"
-        >
-          <div className="rounded-2xl border border-border bg-card p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Interested in Working Together?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              I'm always excited to take on new challenges and collaborate on innovative projects. 
-              Let's discuss how we can bring your ideas to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg">
-                <Link href="mailto:topeokuselu@gmail.com">
-                  Get In Touch
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="https://github.com/Okuselu" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
-                  View All Code
-                </Link>
-              </Button>
-            </div>
-          </div>
         </AnimatedGroup>
       </div>
     </section>

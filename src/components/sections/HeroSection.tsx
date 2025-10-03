@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight } from 'lucide-react'
+import { ArrowRight, ChevronRight, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/motion-primitives/text-effect'
@@ -41,35 +41,39 @@ export default function HeroSection() {
       <Header />
       <main className="relative">
         <section className="relative min-h-screen overflow-hidden">
-          <div className="relative z-10 flex min-h-screen flex-col">
-            {/* Subtle Background */}
-            <AnimatedGroup
-              variants={fadeInBlurVariants}
-              className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32"
-            >
-              <Image
-                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                alt="Background"
-                fill
-                className="object-cover opacity-20"
-                priority
+          <div className="relative">
+            {/* Grid Background for Both Mobile and Desktop */}
+            <div className="absolute inset-0 -z-20">
+              {/* Grid Pattern */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '50px 50px'
+                }}
               />
-            </AnimatedGroup>
+              {/* Subtle radial fade */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: `radial-gradient(circle at 50% 50%, transparent 0%, hsl(var(--background)) 70%)`
+                }}
+              />
+            </div>
 
-            <div
-              className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-            />
-
-            <div className="mx-auto max-w-7xl px-6 pt-20 lg:pt-24">
+            <div className="mx-auto max-w-6xl px-6 pt-20 lg:pt-24 relative z-10">
               {/* Main Hero Content */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[60vh] lg:min-h-[70vh]">
                 
                 {/* Left Content - Text */}
-                <div className="text-left space-y-8">
+                <div className="text-center lg:text-left space-y-4 lg:space-y-8">
                   <AnimatedGroup variants={fadeInBlurVariants}>
                     <Link
                       href="#projects"
-                      className="hover:bg-background dark:hover:border-t-border bg-muted group relative z-10 inline-flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
+                      className="hover:bg-background dark:hover:border-t-border bg-muted/90 lg:bg-muted group relative z-10 inline-flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 backdrop-blur-sm lg:backdrop-blur-none"
                     >
                       <span className="text-foreground text-sm">
                         Currently building at Troott & Pacepard
@@ -90,101 +94,61 @@ export default function HeroSection() {
                   </AnimatedGroup>
 
                   {/* Main Heading */}
-                  <div className="space-y-4">
+                  <div className="space-y-2 lg:space-y-4">
                     <TextEffect
                       preset="fade-in-blur"
-                      speedSegment={0.3}
-                      as="h1"
-                      className="text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
+                      className="text-4xl sm:text-3xl  tracking-tight text-white lg:text-foreground"
+                      delay={0.2}
                     >
-                      Hi, I'm
+                      Hi, I&apos;m
                     </TextEffect>
                     <TextEffect
                       preset="fade-in-blur"
-                      speedSegment={0.3}
-                      delay={0.2}
-                      as="h1"
-                      className="text-5xl font-bold tracking-tight text-primary md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1]"
+                      className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white lg:text-foreground"
+                      delay={0.4}
                     >
-                      {SITE_CONFIG.author.fullName}
+                      Tope Okuselu
                     </TextEffect>
                   </div>
 
-                  {/* Tagline */}
+                  {/* Subtitle */}
                   <TextEffect
                     preset="fade-in-blur"
-                    speedSegment={0.2}
-                    delay={0.4}
-                    as="h2"
-                    className="text-xl md:text-2xl lg:text-3xl font-semibold text-muted-foreground"
-                  >
-                    {SITE_CONFIG.author.tagline}
-                  </TextEffect>
-
-                  {/* Bio */}
-                  <TextEffect
-                    preset="fade-in-blur"
-                    speedSegment={0.2}
+                    className="text-xl lg:text-2xl text-gray-300 lg:text-muted-foreground max-w-2xl leading-relaxed mx-auto lg:mx-0"
                     delay={0.6}
-                    as="p"
-                    className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl"
                   >
-                    {SITE_CONFIG.author.bio} From e-commerce platforms to AI-powered applications, 
-                    I bring ideas to life with modern web technologies.
+                    Software Engineer | Redemptive Entrepreneur
                   </TextEffect>
 
                   {/* Action Buttons */}
                   <AnimatedGroup
                     variants={fadeInBlurVariants}
                     delay={0.8}
-                    className="flex flex-col sm:flex-row gap-4"
+                    className="flex flex-col sm:flex-row gap-4 pt-2 lg:pt-4 justify-center lg:justify-start"
                   >
-                    <Button size="lg" className="group text-lg px-8 py-6" asChild>
+                    <Button size="lg" className="group text-lg px-8 py-6 bg-primary/90 hover:bg-primary lg:bg-primary lg:hover:bg-primary/90 backdrop-blur-sm lg:backdrop-blur-none" asChild>
                       <Link href="#projects">
                         View My Projects
                         <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </Button>
-                    <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+                    <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 lg:border-border lg:text-foreground lg:hover:bg-accent backdrop-blur-sm lg:backdrop-blur-none" asChild>
                       <Link href={SITE_CONFIG.author.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-5 w-5" />
                         GitHub Profile
                       </Link>
                     </Button>
                   </AnimatedGroup>
-
-                  {/* Stats */}
-                  <AnimatedGroup
-                    variants={fadeInBlurVariants}
-                    delay={1}
-                    className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8"
-                  >
-                    <div className="text-left">
-                      <div className="text-3xl font-bold text-foreground">3+</div>
-                      <div className="text-sm text-muted-foreground">Live Projects</div>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-3xl font-bold text-foreground">2</div>
-                      <div className="text-sm text-muted-foreground">Current Roles</div>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-3xl font-bold text-foreground">15+</div>
-                      <div className="text-sm text-muted-foreground">Technologies</div>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-3xl font-bold text-foreground">E2E</div>
-                      <div className="text-sm text-muted-foreground">Development</div>
-                    </div>
-                  </AnimatedGroup>
                 </div>
 
-                {/* Right Content - Image with Gradient Fade */}
-                <div className="flex justify-center lg:justify-end">
+                {/* Right Content - Image (Smaller and Higher) */}
+                <div className="hidden lg:flex justify-center">
                   <AnimatedGroup
                     variants={fadeInBlurVariants}
                     delay={0.5}
-                    className="relative"
+                    className="relative ml-30"
                   >
-                    <div className="relative w-80 h-80 lg:w-96 lg:h-96 xl:w-[450px] xl:h-[450px]">
+                    <div className="relative w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
                       {/* Main Image Container */}
                       <div className="relative w-full h-full overflow-hidden rounded-2xl">
                         <Image
@@ -219,6 +183,32 @@ export default function HeroSection() {
                 </div>
               </div>
 
+              {/* Stats Section - Full Width Outside Grid */}
+              <AnimatedGroup
+                variants={fadeInBlurVariants}
+                delay={1}
+                className="mt-8 lg:mt-12"
+              >
+                <div className="grid grid-cols-4 gap-4 lg:gap-12 max-w-5xl mx-auto">
+                  <div className="text-center">
+                    <div className="text-2xl lg:text-5xl font-bold text-white lg:text-foreground mb-1 lg:mb-2">2+</div>
+                    <div className="text-xs lg:text-lg text-gray-300 lg:text-muted-foreground">Live Projects</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl lg:text-5xl font-bold text-white lg:text-foreground mb-1 lg:mb-2">2</div>
+                    <div className="text-xs lg:text-lg text-gray-300 lg:text-muted-foreground">Current Roles</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl lg:text-5xl font-bold text-white lg:text-foreground mb-1 lg:mb-2">15+</div>
+                    <div className="text-xs lg:text-lg text-gray-300 lg:text-muted-foreground">Technologies</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl lg:text-5xl font-bold text-white lg:text-foreground mb-1 lg:mb-2">E2E</div>
+                    <div className="text-xs lg:text-lg text-gray-300 lg:text-muted-foreground">Development</div>
+                  </div>
+                </div>
+              </AnimatedGroup>
+
               {/* Current Roles Section */}
               <AnimatedGroup
                 variants={fadeInBlurVariants}
@@ -226,28 +216,49 @@ export default function HeroSection() {
                 className="mt-24 lg:mt-32"
               >
                 <div className="text-center mb-12">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Currently Working At</h3>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white lg:text-foreground mb-4">Currently Working At</h3>
+                  <p className="text-gray-300 lg:text-muted-foreground max-w-2xl mx-auto">
                     Building innovative solutions at two exciting companies
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  {CURRENT_ROLES.map((role, index) => (
+                  {CURRENT_ROLES.map((role) => (
                     <Link
                       key={role.company}
                       href={role.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-8 rounded-xl border border-border bg-card hover:bg-accent transition-all duration-300 hover:shadow-lg hover:scale-105"
+                      className="group p-8 rounded-xl border border-white/20 lg:border-border bg-white/10 lg:bg-card hover:bg-white/20 lg:hover:bg-accent transition-all duration-300 hover:shadow-lg hover:scale-105 backdrop-blur-sm lg:backdrop-blur-none"
                     >
                       <div className="flex items-center justify-between mb-4">
-                        <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                          {role.company}
-                        </h4>
-                        <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                        <div className="flex items-center gap-4">
+                          {/* Company Logo */}
+                          {role.company === "Troott" && (
+                            <Image
+                              src="/troott-icon-dark.svg"
+                              alt="Troott Logo"
+                              width={40}
+                              height={40}
+                              className="rounded-lg"
+                            />
+                          )}
+                          {role.company === "Pacepard" && (
+                            <Image
+                              src="/images/Pacepard.png"
+                              alt="Pacepard Logo"
+                              width={40}
+                              height={40}
+                              className="rounded-lg"
+                            />
+                          )}
+                          <h4 className="text-xl font-bold text-white lg:text-foreground group-hover:text-primary transition-colors">
+                            {role.company}
+                          </h4>
+                        </div>
+                        <ArrowRight className="h-5 w-5 text-gray-300 lg:text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                       </div>
                       <p className="text-primary font-semibold mb-3">{role.position}</p>
-                      <p className="text-muted-foreground leading-relaxed">{role.description}</p>
+                      <p className="text-gray-300 lg:text-muted-foreground leading-relaxed">{role.description}</p>
                     </Link>
                   ))}
                 </div>

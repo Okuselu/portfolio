@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-import '../styles/components/animations.css'
 import Footer from '@/components/layout/Footer'
 import { FloatingSocial } from '@/components/ui/floating-social'
 import { SITE_CONFIG } from '@/lib/constants'
