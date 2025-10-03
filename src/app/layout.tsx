@@ -1,58 +1,47 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import "../styles/components/animations.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import type { Metadata } from 'next'
+import { Inter, JetBrains_Mono } from 'next/font/google'
+import './globals.css'
+import '../styles/components/animations.css'
+import Footer from '@/components/layout/Footer'
+import { FloatingSocial } from '@/components/ui/floating-social'
+import { SITE_CONFIG } from '@/lib/constants'
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-});
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: "Your Portfolio | Full Stack Developer",
-  description: "A modern portfolio showcasing my projects and skills as a full stack developer",
-  keywords: ["portfolio", "developer", "react", "nextjs", "typescript"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  title: `${SITE_CONFIG.name} - Portfolio`,
+  description: SITE_CONFIG.description,
+  authors: [{ name: SITE_CONFIG.author.name }],
+  keywords: ['Frontend Developer', 'React', 'Next.js', 'TypeScript', 'Web Development'],
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://yourportfolio.com",
-    title: "Your Portfolio | Full Stack Developer",
-    description: "A modern portfolio showcasing my projects and skills as a full stack developer",
-    siteName: "Your Portfolio",
+    title: `${SITE_CONFIG.name} - Portfolio`,
+    description: SITE_CONFIG.description,
+    type: 'website',
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Your Portfolio | Full Stack Developer",
-    description: "A modern portfolio showcasing my projects and skills as a full stack developer",
-    creator: "@yourusername",
-  },
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col`}
-      >
-        <Header />
-        <main className="flex-1 pt-20">
-          {children}
-        </main>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        {children}
+        <FloatingSocial />
         <Footer />
       </body>
     </html>
-  );
+  )
 }

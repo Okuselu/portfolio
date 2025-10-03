@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils'
 
 const menuItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'About', href: '/#about' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact', href: 'mailto:topeokuselu@gmail.com' },
 ]
 
 export default function Header() {
