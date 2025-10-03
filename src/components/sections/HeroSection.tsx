@@ -69,24 +69,24 @@ export default function HeroSection() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[60vh] lg:min-h-[70vh]">
                 
                 {/* Left Content - Text */}
-                <div className="text-center lg:text-left space-y-4 lg:space-y-8">
+                <div className="text-center lg:text-left space-y-6 lg:space-y-8">
                   <AnimatedGroup variants={fadeInBlurVariants}>
                     <Link
                       href="#projects"
-                      className="hover:bg-background dark:hover:border-t-border bg-muted/90 lg:bg-muted group relative z-10 inline-flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 backdrop-blur-sm lg:backdrop-blur-none"
+                      className="hover:bg-background dark:hover:border-t-border bg-muted/90 lg:bg-muted group relative z-10 inline-flex w-fit items-center gap-2 lg:gap-4 rounded-full border p-1 pl-2 lg:pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 backdrop-blur-sm lg:backdrop-blur-none"
                     >
-                      <span className="text-foreground text-sm">
+                      <span className="text-foreground text-xs lg:text-sm">
                         Currently building at Troott & Pacepard
                       </span>
-                      <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+                      <span className="dark:border-background block h-3 lg:h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
-                      <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                        <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                          <span className="flex size-6">
-                            <ArrowRight className="m-auto size-3" />
+                      <div className="bg-background group-hover:bg-muted size-5 lg:size-6 overflow-hidden rounded-full duration-500">
+                        <div className="flex w-10 lg:w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                          <span className="flex size-5 lg:size-6">
+                            <ArrowRight className="m-auto size-2.5 lg:size-3" />
                           </span>
-                          <span className="flex size-6">
-                            <ArrowRight className="m-auto size-3" />
+                          <span className="flex size-5 lg:size-6">
+                            <ArrowRight className="m-auto size-2.5 lg:size-3" />
                           </span>
                         </div>
                       </div>
@@ -94,17 +94,17 @@ export default function HeroSection() {
                   </AnimatedGroup>
 
                   {/* Main Heading */}
-                  <div className="space-y-2 lg:space-y-4">
+                  <div className="space-y-1 lg:space-y-4">
                     <TextEffect
                       preset="fade-in-blur"
-                      className="text-4xl sm:text-3xl  tracking-tight text-white lg:text-foreground"
+                      className="text-base lg:text-4xl tracking-tight text-white lg:text-foreground"
                       delay={0.2}
                     >
                       Hi, I&apos;m
                     </TextEffect>
                     <TextEffect
                       preset="fade-in-blur"
-                      className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white lg:text-foreground"
+                      className="text-6xl xl:text-7xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white lg:text-foreground"
                       delay={0.4}
                     >
                       Tope Okuselu
@@ -114,7 +114,7 @@ export default function HeroSection() {
                   {/* Subtitle */}
                   <TextEffect
                     preset="fade-in-blur"
-                    className="text-xl lg:text-2xl text-gray-300 lg:text-muted-foreground max-w-2xl leading-relaxed mx-auto lg:mx-0"
+                    className="text-base sm:text-lg lg:text-2xl text-gray-300 lg:text-muted-foreground max-w-2xl leading-relaxed mx-auto lg:mx-0"
                     delay={0.6}
                   >
                     Software Engineer | Redemptive Entrepreneur
@@ -124,17 +124,17 @@ export default function HeroSection() {
                   <AnimatedGroup
                     variants={fadeInBlurVariants}
                     delay={0.8}
-                    className="flex flex-col sm:flex-row gap-4 pt-2 lg:pt-4 justify-center lg:justify-start"
+                    className="flex flex-col sm:flex-row gap-3 lg:gap-4 pt-4 lg:pt-4 justify-center lg:justify-start"
                   >
-                    <Button size="lg" className="group text-lg px-8 py-6 bg-primary/90 hover:bg-primary lg:bg-primary lg:hover:bg-primary/90 backdrop-blur-sm lg:backdrop-blur-none" asChild>
+                    <Button size="lg" className="group text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 bg-primary hover:bg-primary/90 lg:bg-primary lg:hover:bg-primary/90 backdrop-blur-sm lg:backdrop-blur-none font-semibold" asChild>
                       <Link href="#projects">
                         View My Projects
-                        <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        <ChevronRight className="ml-2 h-4 lg:h-5 w-4 lg:w-5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </Button>
-                    <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 lg:border-border lg:text-foreground lg:hover:bg-accent backdrop-blur-sm lg:backdrop-blur-none" asChild>
+                    <Button variant="outline" size="lg" className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 border-white/30 text-white hover:bg-white/10 lg:border-border lg:text-foreground lg:hover:bg-accent backdrop-blur-sm lg:backdrop-blur-none" asChild>
                       <Link href={SITE_CONFIG.author.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-5 w-5" />
+                        <Github className="mr-2 h-4 lg:h-5 w-4 lg:w-5" />
                         GitHub Profile
                       </Link>
                     </Button>
@@ -187,9 +187,9 @@ export default function HeroSection() {
               <AnimatedGroup
                 variants={fadeInBlurVariants}
                 delay={1}
-                className="mt-8 lg:mt-12"
+                className="mt-6 lg:mt-8"
               >
-                <div className="grid grid-cols-4 gap-4 lg:gap-12 max-w-5xl mx-auto">
+                <div className="grid grid-cols-4 gap-3 lg:gap-12 max-w-5xl mx-auto">
                   <div className="text-center">
                     <div className="text-2xl lg:text-5xl font-bold text-white lg:text-foreground mb-1 lg:mb-2">2+</div>
                     <div className="text-xs lg:text-lg text-gray-300 lg:text-muted-foreground">Live Projects</div>
@@ -213,11 +213,11 @@ export default function HeroSection() {
               <AnimatedGroup
                 variants={fadeInBlurVariants}
                 delay={1.2}
-                className="mt-24 lg:mt-32"
+                className="mt-16 lg:mt-24"
               >
-                <div className="text-center mb-12">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white lg:text-foreground mb-4">Currently Working At</h3>
-                  <p className="text-gray-300 lg:text-muted-foreground max-w-2xl mx-auto">
+                <div className="text-center mb-8 lg:mb-12">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white lg:text-foreground mb-3 lg:mb-4">Currently Working At</h3>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-300 lg:text-muted-foreground max-w-2xl mx-auto">
                     Building innovative solutions at two exciting companies
                   </p>
                 </div>

@@ -62,7 +62,8 @@ const getStatusBadge = (status: string) => {
       return (
         <span className={`${baseClasses} bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400`}>
           <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-1.5 animate-pulse" />
-          In Development
+          <span className="sm:hidden">Dev</span>
+          <span className="hidden sm:inline">In Development</span>
         </span>
       )
     default:
